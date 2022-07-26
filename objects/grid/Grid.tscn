@@ -4,19 +4,20 @@
 [ext_resource path="res://objects/grid/Grid.gd" type="Script" id=2]
 
 [node name="Grid" type="Area2D"]
-position = Vector2( -47, -11 )
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0.0999985, -1.816 )
 polygon = PoolVector2Array( 2, -23, -33, 2, -2, 24, 34, -1 )
 
 [node name="Platform" type="Sprite" parent="."]
+position = Vector2( 0.0999756, -1.816 )
 scale = Vector2( 0.0703125, 0.0703125 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -73.728 )
 
 [node name="BuildingSprite" type="Sprite" parent="."]
-position = Vector2( -1, -4 )
+position = Vector2( -0.899994, -5.816 )
 scale = Vector2( 0.0849609, 0.0849609 )
 
 [connection signal="input_event" from="." to="." method="_on_Grid_input_event"]
