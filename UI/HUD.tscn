@@ -1,0 +1,355 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/ui_styles/button_style.tres" type="StyleBox" id=1]
+[ext_resource path="res://UI/ui_styles/button_pressed_style.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/sprites/testBuilding.png" type="Texture" id=3]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.33484
+margin_right = 1.33484
+script = ExtResource( 4 )
+
+[node name="BuildButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -144.0
+margin_top = -105.0
+margin_right = 144.0
+margin_bottom = -33.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+text = "Buildings"
+
+[node name="BuildingsPanel" type="Panel" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -448.0
+margin_top = -257.167
+margin_right = 448.0
+margin_bottom = -130.167
+custom_styles/panel = SubResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/BuildingsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BuildingsPanel/ScrollContainer"]
+margin_right = 2306.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 110.0
+margin_right = 216.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 220.0
+margin_right = 326.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer3"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 330.0
+margin_right = 436.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer4"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 440.0
+margin_right = 546.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer5"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 550.0
+margin_right = 656.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer6"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 660.0
+margin_right = 766.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer7"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 770.0
+margin_right = 876.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer8"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 880.0
+margin_right = 986.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer9"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 990.0
+margin_right = 1096.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer10"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1100.0
+margin_right = 1206.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer11"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1210.0
+margin_right = 1316.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer12"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer13" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1320.0
+margin_right = 1426.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer13"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer14" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1430.0
+margin_right = 1536.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer14"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer15" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1540.0
+margin_right = 1646.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer15"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer16" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1650.0
+margin_right = 1756.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer16"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer17" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1760.0
+margin_right = 1866.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer17"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer18" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1870.0
+margin_right = 1976.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer18"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer19" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 1980.0
+margin_right = 2086.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer19"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer20" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 2090.0
+margin_right = 2196.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer20"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="VBoxContainer21" type="VBoxContainer" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer"]
+margin_left = 2200.0
+margin_right = 2306.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/BuildingsPanel/ScrollContainer/HBoxContainer/VBoxContainer21"]
+margin_right = 106.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 106, 107.553 )
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[connection signal="pressed" from="Control/BuildButton" to="Control" method="_on_BuildButton_pressed"]
