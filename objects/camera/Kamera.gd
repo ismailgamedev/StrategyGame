@@ -7,13 +7,16 @@ onready var Kamera = get_node("Camera2D")
 
 var target_return_enabled = true
 var target_return_rate = 0.02
-var min_zoom = 0.5
-var max_zoom = 2
+var min_zoom = 0.2
+var max_zoom = 1
 var zoom_sensitivity = 10
 var zoom_speed = 0.05
 
 var events = {}
 var last_drag_distance = 0
+
+func _ready():
+	visible = true
 
 func _process(delta):
 	Vel = move_and_slide(Vel)

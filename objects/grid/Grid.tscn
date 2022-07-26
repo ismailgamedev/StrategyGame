@@ -20,6 +20,4 @@ offset = Vector2( 0, -73.728 )
 position = Vector2( 0.478971, -5.61759 )
 scale = Vector2( 0.0646328, 0.0646328 )
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
 [connection signal="input_event" from="." to="." method="_on_Grid_input_event"]
