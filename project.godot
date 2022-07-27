@@ -17,7 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://Singletons/Globals.gd"
-TimeHandler="*res://objects/timeHandler/timeHandler.tscn"
+TimeHandler="*res://Singletons/timeHandler/timeHandler.tscn"
 
 [display]
 
