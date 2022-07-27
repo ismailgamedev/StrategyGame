@@ -4,11 +4,11 @@ onready var httpRequest = $HTTPRequest
 func _ready():
 	httpRequest.connect("request_completed", self, "_mevcut_tarih_saat")
 	httpRequest.request("http://worldtimeapi.org/api/timezone/Europe/Istanbul")
+	
 	pass
 
 
 var timeGlobal = {
-	
 	"hour":0,
 	"minute":0,
 	"second":0,
@@ -35,6 +35,15 @@ var timeFinaly = {
 	"month":07,
 	"year":2022,
 }
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		
+		recentTimeGlobal = timeGlobal
+		print(recentTimeGlobal)
+		DataHandler._save_time()
+		get_tree().quit()
+	pass
 
 
 func _mevcut_tarih_saat(result, response_code, headers, body):

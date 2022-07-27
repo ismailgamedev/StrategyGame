@@ -13,10 +13,12 @@ config_version=4
 config/name="Strategy Game"
 run/main_scene="res://Scenes/IsmailTest/WorldIsmail.tscn"
 config/icon="res://icon.png"
+config/auto_accept_quit=false
 
 [autoload]
 
 Globals="*res://Singletons/Globals.gd"
+DataHandler="*res://Singletons/dataHandler/dataHandler.gd"
 TimeHandler="*res://Singletons/timeHandler/timeHandler.tscn"
 
 [display]
