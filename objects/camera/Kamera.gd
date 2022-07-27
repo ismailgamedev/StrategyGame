@@ -24,9 +24,27 @@ func _process(delta):
 		position = lerp(position, get_node(target).position, target_return_rate)
 
 func _input(event):
+	#
+	## bilgisayarlar icin yakinlasma sistemi ##
+	#
+	if Input.is_action_pressed("scroll_down"): # haritadan uzaklasir
+		var new_zoom = 1 + zoom_speed
+		new_zoom = clamp(Kamera.zoom.x * new_zoom, min_zoom, max_zoom)
+		Kamera.zoom = Vector2.ONE * new_zoom
+
+		pass
+	if Input.is_action_pressed("scroll_up"): ## haritaya yaklasir
+		var new_zoom = 1 - zoom_speed
+		new_zoom = clamp(Kamera.zoom.x * new_zoom, min_zoom, max_zoom)
+		Kamera.zoom = Vector2.ONE * new_zoom
+
+		pass
+	### -------- ###
+	
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			events[event.index] = event
+			
 		else:
 			events.erase(event.index)
 
