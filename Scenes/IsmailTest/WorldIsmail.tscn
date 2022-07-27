@@ -5,6 +5,7 @@
 [ext_resource path="res://objects/camera/Kamera.tscn" type="PackedScene" id=3]
 
 [node name="WorldIsmail" type="Node2D"]
+position = Vector2( -1, 0 )
 
 [node name="Kamera" parent="." instance=ExtResource( 3 )]
 

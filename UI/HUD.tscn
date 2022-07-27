@@ -91,28 +91,26 @@ anchor_bottom = 1.0
 margin_top = -167.0
 
 [node name="KucukEvBtn" type="TextureButton" parent="Control/Control"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -90.1555
-margin_top = -239.901
-margin_right = -15.1555
-margin_bottom = -164.901
+margin_left = -106.823
+margin_top = -321.652
+margin_right = -31.823
+margin_bottom = -246.653
 texture_normal = ExtResource( 3 )
 expand = true
 
 [node name="EvMenuBtn" type="TextureButton" parent="Control/Control"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -76.6626
-margin_top = -154.181
-margin_right = -1.6626
-margin_bottom = -79.1809
+margin_left = -90.156
+margin_top = -239.9
+margin_right = -15.156
+margin_bottom = -164.9
 texture_normal = ExtResource( 5 )
 expand = true
 

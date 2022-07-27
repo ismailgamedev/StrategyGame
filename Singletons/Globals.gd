@@ -1,6 +1,6 @@
 extends Node
 
-var kiek : int = 100 
+var dolar : int = 100 
 var yemek : int = 10
 var su : int = 10
 var enerji : float = 40
