@@ -8,7 +8,7 @@ onready var Kamera = get_node("Camera2D")
 var target_return_enabled = true
 var target_return_rate = 0.02
 var min_zoom = 0.2
-var max_zoom = 1
+var max_zoom = 0.8
 var zoom_sensitivity = 10
 var zoom_speed = 0.05
 

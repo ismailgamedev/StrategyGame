@@ -20,4 +20,9 @@ offset = Vector2( 0, -73.728 )
 position = Vector2( 0.478971, -5.61759 )
 scale = Vector2( 0.0646328, 0.0646328 )
 
+[node name="binaTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="input_event" from="." to="." method="_on_Grid_input_event"]
+[connection signal="timeout" from="binaTimer" to="." method="_on_binaTimer_timeout"]
