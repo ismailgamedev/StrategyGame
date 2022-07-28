@@ -10,6 +10,13 @@ var data = {
 	"nufus":50,
 	
 }
+
+
+var gelirListesi = {
+	"nufus_kucukEv":{"s":"","s2":""},
+	"nufus_BuyukEv":{"s":"","s2":""},
+	"nufus_ApratmankEv":{"s":"","s2":""},
+}
 #var dolar : int = 100 
 #var yemek : int = 10
 #var su : int = 10
