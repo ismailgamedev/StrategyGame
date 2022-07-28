@@ -13,9 +13,20 @@ var data = {
 
 
 var gelirListesi = {
-	"nufus_kucukEv":{"s":"","s2":""},
-	"nufus_BuyukEv":{"s":"","s2":""},
-	"nufus_ApratmankEv":{"s":"","s2":""},
+	"nufus_kucukEv":{"calismaSuresi":"","Gelir":""},
+	"nufus_buyukEv":{"s":"","s2":""},
+	"nufus_apratmankEv":{"s":"","s2":""},
+	
+	"mutluluk_kucukPark":{"s":"","s2":""},
+	"mutluluk_buyukPark":{"s":"","s2":""},
+	
+	
+	"enerji_ruzgarTurbini":{"s":"","s2":""},
+	"enerji_gunesPaneli":{"s":"","s2":""},
+	"enerji_biyoYakit":{"s":"","s2":""},
+	"enerji_petrol":{"s":"","s2":""},
+	
+	
 }
 #var dolar : int = 100 
 #var yemek : int = 10
