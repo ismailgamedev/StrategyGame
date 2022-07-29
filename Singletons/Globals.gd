@@ -2,7 +2,7 @@ extends Node
 
 
 var data = {
-	"dolar":500,
+	"dolar":800,
 	"yemek":0,
 	"su":0,
 	"enerji":0,
@@ -34,7 +34,7 @@ var gelirListesi = {
 #var enerji : float = 40
 #var mutluluk : int = 100
 #var nufus : int = 50
-enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali}
+enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali,ruzgarturbini,gunes_paneli,sudeposu}
 var current_building = current_building_enum.bos
 
 

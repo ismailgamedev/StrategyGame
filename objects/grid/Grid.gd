@@ -1,17 +1,13 @@
 extends Area2D
 
-onready var building_sprite = get_node("BuildingSprite")
 onready var building_timer = get_node("binaTimer")
 onready var nowbuildingicon = get_node("BuildingShits")
 onready var platform = get_node("Platform")
 #Textures
-onready var kucuk_ev_texture = preload("res://assets/sprites/buildings/ev2.png")
-onready var orta_ev_texture = preload("res://assets/sprites/buildings/ev4.png")
-onready var buyuk_ev_texture = preload("res://assets/sprites/buildings/apartman.png")
-onready var elektirik_santrali_texture = preload("res://assets/sprites/buildings/elektiriksantrali.png")
+onready var animated_spirte = get_node("AnimatedSprite")
 #Grid Building Type
 
-enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali }
+enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali,ruzgarturbini,gunes_paneli,sudepo }
 export(current_building_enum) var current_building = current_building_enum.bos
 
 var is_building : bool
@@ -19,11 +15,11 @@ var is_building : bool
 func _process(delta):
 	if is_building == false:
 		nowbuildingicon.visible = false
-		building_sprite.modulate = Color(1, 1, 1)
+		animated_spirte.modulate = Color(1, 1, 1)
 	else:
 		nowbuildingicon.visible = true
 		nowbuildingicon.get_node("timer_label").text = str(int(building_timer.time_left))
-		building_sprite.modulate = Color(1, 1, 1, 0.3)
+		animated_spirte.modulate = Color(1, 1, 1, 0.3)
 	if Globals.current_building != Globals.current_building_enum.bos:
 		platform.modulate = Color(0.203922, 0.490196, 0.203922)
 	else:
@@ -39,7 +35,7 @@ func _on_Grid_input_event(_viewport, event, _shape_idx):
 
 func create_building():
 	if Globals.current_building == Globals.current_building_enum.kucuk_ev and Globals.data["dolar"] >= 20:
-		building_sprite.texture = kucuk_ev_texture
+		animated_spirte.play("kucuk_ev")
 		current_building = current_building_enum.kucuk_ev
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
@@ -47,7 +43,7 @@ func create_building():
 		Globals.data["dolar"] -= 20
 
 	if Globals.current_building == Globals.current_building_enum.orta_ev and Globals.data["dolar"] >= 40:
-		building_sprite.texture = orta_ev_texture
+		animated_spirte.play("orta_ev")
 		current_building = current_building_enum.orta_ev
 		Globals.current_building = Globals.current_building_enum.bos
 		building_timer.start(8)
@@ -55,7 +51,7 @@ func create_building():
 		Globals.data["dolar"] -= 40
 
 	if Globals.current_building == Globals.current_building_enum.buyuk_ev and Globals.data["dolar"] >= 100:
-		building_sprite.texture = buyuk_ev_texture
+		animated_spirte.play("buyuk_ev")
 		current_building = current_building_enum.buyuk_ev
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
@@ -63,12 +59,36 @@ func create_building():
 		Globals.data["dolar"] -= 100
 		
 	if Globals.current_building == Globals.current_building_enum.elektirik_santrali and Globals.data["dolar"] >= 200:
-		building_sprite.texture = elektirik_santrali_texture
+		animated_spirte.play("elektirik_santrali")
 		current_building = current_building_enum.elektirik_santrali
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
 		building_timer.start(8)
 		Globals.data["dolar"] -= 200
+		
+	if Globals.current_building == Globals.current_building_enum.ruzgarturbini and Globals.data["dolar"] >= 150:
+		animated_spirte.play("ruzgarturbini")
+		current_building = current_building_enum.ruzgarturbini
+		Globals.current_building = Globals.current_building_enum.bos
+		is_building = true
+		building_timer.start(8)
+		Globals.data["dolar"] -= 150
+		
+	if Globals.current_building == Globals.current_building_enum.gunes_paneli and Globals.data["dolar"] >= 100:
+		animated_spirte.play("gunes_paneli")
+		current_building = current_building_enum.ruzgarturbini
+		Globals.current_building = Globals.current_building_enum.bos
+		is_building = true
+		building_timer.start(8)
+		Globals.data["dolar"] -= 100
+		
+	if Globals.current_building == Globals.current_building_enum.sudeposu and Globals.data["dolar"] >= 100:
+		animated_spirte.play("sudepo")
+		current_building = current_building_enum.sudepo
+		Globals.current_building = Globals.current_building_enum.bos
+		is_building = true
+		building_timer.start(8)
+		Globals.data["dolar"] -= 100
 		
 func _on_binaTimer_timeout():
 	if current_building == current_building_enum.kucuk_ev:
@@ -86,5 +106,13 @@ func _on_binaTimer_timeout():
 	if current_building == current_building_enum.elektirik_santrali:
 		is_building = false
 		building_timer.stop()
-		
+	if current_building == current_building_enum.ruzgarturbini:
+		is_building = false
+		building_timer.stop()
+	if current_building == current_building_enum.gunes_paneli:
+		is_building = false
+		building_timer.stop()
+	if current_building == current_building_enum.sudepo:
+		is_building = false
+		building_timer.stop()
 
