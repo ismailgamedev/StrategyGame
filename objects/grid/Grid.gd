@@ -8,9 +8,10 @@ onready var platform = get_node("Platform")
 onready var kucuk_ev_texture = preload("res://assets/sprites/buildings/ev2.png")
 onready var orta_ev_texture = preload("res://assets/sprites/buildings/ev4.png")
 onready var buyuk_ev_texture = preload("res://assets/sprites/buildings/apartman.png")
+onready var elektirik_santrali_texture = preload("res://assets/sprites/buildings/elektiriksantrali.png")
 #Grid Building Type
 
-enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,fabrika,petrol_donusturucusu,biyo_yakit_donusturucusu, }
+enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali }
 export(current_building_enum) var current_building = current_building_enum.bos
 
 var is_building : bool
@@ -60,7 +61,15 @@ func create_building():
 		is_building = true
 		building_timer.start(8)
 		Globals.data["dolar"] -= 100
-
+		
+	if Globals.current_building == Globals.current_building_enum.elektirik_santrali and Globals.data["dolar"] >= 200:
+		building_sprite.texture = elektirik_santrali_texture
+		current_building = current_building_enum.elektirik_santrali
+		Globals.current_building = Globals.current_building_enum.bos
+		is_building = true
+		building_timer.start(8)
+		Globals.data["dolar"] -= 200
+		
 func _on_binaTimer_timeout():
 	if current_building == current_building_enum.kucuk_ev:
 		is_building = false
@@ -73,6 +82,9 @@ func _on_binaTimer_timeout():
 	if current_building == current_building_enum.buyuk_ev:
 		is_building = false
 		Globals.data["nufus"] += 20
+		building_timer.stop()
+	if current_building == current_building_enum.elektirik_santrali:
+		is_building = false
 		building_timer.stop()
 		
 

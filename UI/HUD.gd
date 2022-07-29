@@ -2,6 +2,8 @@ extends Control
 
 var build_btn_bool = false
 var evmenu_btn_bool = false
+var elektirikmenu_btn_bool = false
+
 onready var money_label = get_node("Money/MoneyLabel")
 onready var nufus_label = get_node("Nufus/NufusLabel")
 onready var elektirik_label = get_node("Elektirik/ElektirikLabel")
@@ -18,6 +20,7 @@ func _on_BuildBtn_pressed():
 		build_btn_bool = true
 	else:
 		anim_player.play_backwards("evmenubtn")
+		anim_player.play_backwards("elektirikmenu")
 		Globals.current_building = Globals.current_building_enum.bos
 		yield(anim_player,"animation_finished")
 		anim_player.play_backwards("buildbtnpressanim")
@@ -30,6 +33,7 @@ func _process(delta):
 	yemek_label.text = str(Globals.data["yemek"])
 	su_label.text = str(Globals.data["su"])
 	mutluluk_label.text = str(Globals.data["mutluluk"])
+	
 func _on_EvMenuBtn_pressed():
 	if evmenu_btn_bool == false:
 		anim_player.play("evmenubtn")
@@ -39,12 +43,24 @@ func _on_EvMenuBtn_pressed():
 		Globals.current_building = Globals.current_building_enum.bos
 		anim_player.play_backwards("evmenubtn")
 
-
+func _on_ElektirikMenuBtn_pressed():
+	if elektirikmenu_btn_bool == false:
+		anim_player.play("elektirikmenu")
+		elektirikmenu_btn_bool = true
+	else:
+		elektirikmenu_btn_bool = false
+		Globals.current_building = Globals.current_building_enum.bos
+		anim_player.play_backwards("elektirikmenu")
+		
+		
 func _on_KucukEvBtn_pressed():
 	if Globals.data["dolar"] >= 20:
 		Globals.current_building = Globals.current_building_enum.kucuk_ev
 
-
 func _on_OrtaEvBtn_pressed():
 	if Globals.data["dolar"] >= 40:
 		Globals.current_building = Globals.current_building_enum.orta_ev
+
+func _on_ElektirikSantraliBtn_pressed():
+	if Globals.data["dolar"] >= 200:
+		Globals.current_building = Globals.current_building_enum.elektirik_santrali
