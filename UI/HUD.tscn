@@ -88,7 +88,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1024, 487 ), Vector2( 0, 487 ) ]
+"values": [ Vector2( 1299.69, 487 ), Vector2( 0, 487 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -105,7 +105,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1024, 487 ), Vector2( 0, 487 ) ]
+"values": [ Vector2( 1302.69, 487 ), Vector2( 0, 487 ) ]
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -128,8 +128,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 278.685
 margin_top = -113.0
-margin_right = 2439.0
+margin_right = 2717.69
 
 [node name="Panel" type="Panel" parent="Control/EvlerPanel"]
 anchor_right = 1.0
@@ -208,8 +209,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 275.689
 margin_top = -113.0
-margin_right = 2439.0
+margin_right = 2714.69
 
 [node name="Panel" type="Panel" parent="Control/ElektirikPanel"]
 anchor_right = 1.0
@@ -289,7 +291,7 @@ anchor_bottom = 1.0
 margin_left = -65.18
 margin_top = -80.694
 margin_right = -5.18011
-margin_bottom = -20.6942
+margin_bottom = -20.6943
 texture_normal = ExtResource( 16 )
 expand = true
 
