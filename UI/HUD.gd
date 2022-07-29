@@ -18,11 +18,22 @@ func _on_BuildBtn_pressed():
 	if build_btn_bool == false:
 		anim_player.play("buildbtnpressanim")
 		build_btn_bool = true
-	else:
+	elif build_btn_bool == true and evmenu_btn_bool == true:
 		anim_player.play_backwards("evmenubtn")
-		anim_player.play_backwards("elektirikmenu")
-		Globals.current_building = Globals.current_building_enum.bos
 		yield(anim_player,"animation_finished")
+		evmenu_btn_bool = false
+		Globals.current_building = Globals.current_building_enum.bos
+		anim_player.play_backwards("buildbtnpressanim")
+		build_btn_bool = false
+	elif build_btn_bool == true and elektirikmenu_btn_bool == true:
+		anim_player.play_backwards("elektirikmenu")
+		yield(anim_player,"animation_finished")
+		elektirikmenu_btn_bool  = false
+		Globals.current_building = Globals.current_building_enum.bos
+		anim_player.play_backwards("buildbtnpressanim")
+		build_btn_bool = false
+	elif build_btn_bool == true: 
+		Globals.current_building = Globals.current_building_enum.bos
 		anim_player.play_backwards("buildbtnpressanim")
 		build_btn_bool = false
 	
@@ -35,19 +46,19 @@ func _process(delta):
 	mutluluk_label.text = str(Globals.data["mutluluk"])
 	
 func _on_EvMenuBtn_pressed():
-	if evmenu_btn_bool == false:
+	if evmenu_btn_bool == false and elektirikmenu_btn_bool == false:
 		anim_player.play("evmenubtn")
 		evmenu_btn_bool = true
-	else:
+	elif evmenu_btn_bool == true and elektirikmenu_btn_bool == false:
 		evmenu_btn_bool = false
 		Globals.current_building = Globals.current_building_enum.bos
 		anim_player.play_backwards("evmenubtn")
 
 func _on_ElektirikMenuBtn_pressed():
-	if elektirikmenu_btn_bool == false:
+	if elektirikmenu_btn_bool == false and evmenu_btn_bool == false:
 		anim_player.play("elektirikmenu")
 		elektirikmenu_btn_bool = true
-	else:
+	elif elektirikmenu_btn_bool == true and evmenu_btn_bool == false:
 		elektirikmenu_btn_bool = false
 		Globals.current_building = Globals.current_building_enum.bos
 		anim_player.play_backwards("elektirikmenu")
