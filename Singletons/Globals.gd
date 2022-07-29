@@ -13,18 +13,18 @@ var data = {
 
 
 var gelirListesi = {
-	"nufus_kucukEv":{"calismaSuresi":"","Gelir":""},
-	"nufus_buyukEv":{"s":"","s2":""},
-	"nufus_apratmankEv":{"s":"","s2":""},
+	"nufus_kucukEv":{"calismaSuresi":25,"Gelir":2},
+	"nufus_buyukEv":{"calismaSuresi":35,"Gelir":5},
+	"nufus_apratmankEv":{"calismaSuresi":60,"Gelir":12},
 	
-	"mutluluk_kucukPark":{"s":"","s2":""},
-	"mutluluk_buyukPark":{"s":"","s2":""},
+	"mutluluk_kucukPark":{"calismaSuresi":60,"Gelir":5},
+	"mutluluk_buyukPark":{"calismaSuresi":150,"Gelir":15},
 	
 	
-	"enerji_ruzgarTurbini":{"s":"","s2":""},
-	"enerji_gunesPaneli":{"s":"","s2":""},
-	"enerji_biyoYakit":{"s":"","s2":""},
-	"enerji_petrol":{"s":"","s2":""},
+	"enerji_ruzgarTurbini":{"calismaSuresi":90,"Gelir":15},
+	"enerji_gunesPaneli":{"calismaSuresi":120,"Gelir":30},
+	"enerji_biyoYakit":{"calismaSuresi":200,"Gelir":60},
+	"enerji_petrol":{"calismaSuresi":310,"Gelir":70},
 	
 	
 }

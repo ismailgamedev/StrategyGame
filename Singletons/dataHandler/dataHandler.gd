@@ -25,4 +25,7 @@ func _save_time():
 	pass
 
 func _load_time():
+	var file = File.new()
+	file.open_encrypted_with_pass(filePath+fileName2,File.WRITE,password)
+	TimeHandler.recentTimeGlobal = file.get_var()
 	pass
