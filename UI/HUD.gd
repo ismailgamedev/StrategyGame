@@ -35,9 +35,9 @@ func _on_EvMenuBtn_pressed():
 		anim_player.play("evmenubtn")
 		evmenu_btn_bool = true
 	else:
-		anim_player.play_backwards("evmenubtn")
-		Globals.current_building = Globals.current_building_enum.bos
 		evmenu_btn_bool = false
+		Globals.current_building = Globals.current_building_enum.bos
+		anim_player.play_backwards("evmenubtn")
 
 
 func _on_KucukEvBtn_pressed():

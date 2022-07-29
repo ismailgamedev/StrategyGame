@@ -354,6 +354,13 @@ margin_bottom = 48.0
 texture = ExtResource( 15 )
 expand = true
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 82.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_right = 1024.0
+
 [connection signal="pressed" from="Control/EvlerPanel/Panel/ScrollContainer/vbox/KucukEvBtn" to="Control" method="_on_KucukEvBtn_pressed"]
 [connection signal="pressed" from="Control/EvlerPanel/Panel/ScrollContainer/vbox/OrtaEvBtn" to="Control" method="_on_OrtaEvBtn_pressed"]
 [connection signal="pressed" from="Control/Control/EvMenuBtn" to="Control" method="_on_EvMenuBtn_pressed"]

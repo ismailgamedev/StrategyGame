@@ -2,12 +2,12 @@ extends Node
 
 
 var data = {
-	"dolar":100,
-	"yemek":10,
-	"su":10,
-	"enerji":40,
+	"dolar":500,
+	"yemek":0,
+	"su":0,
+	"enerji":0,
 	"mutluluk":100,
-	"nufus":50,
+	"nufus":0,
 	
 }
 

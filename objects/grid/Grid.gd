@@ -68,11 +68,11 @@ func _on_binaTimer_timeout():
 		building_timer.stop()
 	if current_building == current_building_enum.orta_ev:
 		is_building = false
-		Globals.data["nufus"] += 6
+		Globals.data["nufus"] += 10
 		building_timer.stop()
 	if current_building == current_building_enum.buyuk_ev:
 		is_building = false
-		Globals.data["nufus"] += 15
+		Globals.data["nufus"] += 20
 		building_timer.stop()
 		
 
