@@ -1,23 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://UI/ui_sprites/build_btn.png" type="Texture" id=1]
 [ext_resource path="res://UI/ui_sprites/build_btn_pressed.png" type="Texture" id=2]
-[ext_resource path="res://UI/ui_sprites/kucuk_ev_btn.png" type="Texture" id=3]
+[ext_resource path="res://UI/ui_sprites/binasatinalui.png" type="Texture" id=3]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=4]
 [ext_resource path="res://UI/ui_sprites/housemenubtn.png" type="Texture" id=5]
-[ext_resource path="res://UI/ui_sprites/water.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://UI/ui_sprites/people.png" type="Texture" id=7]
 [ext_resource path="res://UI/ui_sprites/money.png" type="Texture" id=8]
-[ext_resource path="res://UI/ui_sprites/food.png" type="Texture" id=9]
-[ext_resource path="res://UI/ui_sprites/electrick.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/buildings/ev4.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/buildings/ev2.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/font_buildings.tres" type="DynamicFont" id=11]
+[ext_resource path="res://UI/ui_sprites/electrick.png" type="Texture" id=12]
+[ext_resource path="res://UI/ui_sprites/food.png" type="Texture" id=13]
+[ext_resource path="res://UI/ui_sprites/water.png" type="Texture" id=14]
+[ext_resource path="res://UI/ui_sprites/happy.png" type="Texture" id=15]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.67451, 0.67451, 0.67451, 0.768627 )
+
+[sub_resource type="Animation" id=6]
 length = 0.001
-
-[sub_resource type="Animation" id=2]
-resource_name = "buildbtnpressanim"
-length = 0.2
-step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/EvMenuBtn:rect_position")
 tracks/0/interp = 1
@@ -25,22 +28,39 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 643.337, 12.8191 ), Vector2( 629.844, -72.9005 ) ]
+"values": [ Vector2( 90.8038, 394.012 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "buildbtnpressanim"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/EvMenuBtn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/EvMenuBtn:visible")
+tracks/1/path = NodePath("Control/EvMenuBtn:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.01 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"update": 0,
+"values": [ Vector2( 104.82, 519.306 ), Vector2( 104.82, 419.837 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -48,7 +68,7 @@ resource_name = "evmenubtn"
 length = 0.2
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/KucukEvBtn:rect_position")
+tracks/0/path = NodePath("EvlerPanel:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -57,10 +77,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 629.844, -72.9005 ), Vector2( 613.177, -154.652 ) ]
+"values": [ Vector2( 1024, 487 ), Vector2( 0, 487 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/KucukEvBtn:visible")
+tracks/1/path = NodePath("EvlerPanel:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -73,6 +93,9 @@ tracks/1/keys = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 74.2161 ]
+}
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -84,29 +107,97 @@ margin_bottom = -1.18921
 mouse_filter = 2
 script = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
-anims/RESET = SubResource( 4 )
-anims/buildbtnpressanim = SubResource( 2 )
-anims/evmenubtn = SubResource( 3 )
-
-[node name="Control" type="Control" parent="Control"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -167.0
-
-[node name="KucukEvBtn" type="TextureButton" parent="Control/Control"]
+[node name="EvlerPanel" type="Control" parent="Control"]
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -90.156
-margin_top = -239.9
-margin_right = -15.156
-margin_bottom = -164.901
+margin_top = -113.0
+margin_right = 2439.0
+
+[node name="Panel" type="Panel" parent="Control/EvlerPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/EvlerPanel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 23.0
+margin_top = 10.0
+margin_right = -134.0
+margin_bottom = -10.0
+
+[node name="vbox" type="HBoxContainer" parent="Control/EvlerPanel/Panel/ScrollContainer"]
+margin_right = 177.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+custom_constants/separation = 37
+
+[node name="KucukEvBtn" type="TextureButton" parent="Control/EvlerPanel/Panel/ScrollContainer/vbox"]
+margin_right = 70.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
 texture_normal = ExtResource( 3 )
 expand = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/EvlerPanel/Panel/ScrollContainer/vbox/KucukEvBtn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+expand = true
+
+[node name="value" type="Label" parent="Control/EvlerPanel/Panel/ScrollContainer/vbox/KucukEvBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.8769
+margin_top = 32.0139
+margin_right = 67.1231
+margin_bottom = 101.014
+rect_scale = Vector2( 0.446756, 0.446756 )
+custom_fonts/font = ExtResource( 11 )
+text = "20$"
+
+[node name="OrtaEvBtn" type="TextureButton" parent="Control/EvlerPanel/Panel/ScrollContainer/vbox"]
+margin_left = 107.0
+margin_right = 177.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/EvlerPanel/Panel/ScrollContainer/vbox/OrtaEvBtn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="value" type="Label" parent="Control/EvlerPanel/Panel/ScrollContainer/vbox/OrtaEvBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.3769
+margin_top = 31.9608
+margin_right = 70.6231
+margin_bottom = 100.961
+rect_scale = Vector2( 0.446756, 0.446756 )
+custom_fonts/font = ExtResource( 11 )
+text = "40$"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+anims/RESET = SubResource( 6 )
+anims/buildbtnpressanim = SubResource( 2 )
+anims/evmenubtn = SubResource( 3 )
+
+[node name="Control" type="Control" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -170.0
 
 [node name="EvMenuBtn" type="TextureButton" parent="Control/Control"]
 visible = false
@@ -114,10 +205,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -76.663
-margin_top = -154.181
-margin_right = -1.66302
-margin_bottom = -79.1809
+margin_left = -79.1962
+margin_top = -205.988
+margin_right = -19.1963
+margin_bottom = -145.988
 texture_normal = ExtResource( 5 )
 expand = true
 
@@ -126,53 +217,144 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -170.0
-margin_top = -167.0
+margin_left = -115.0
+margin_top = -113.0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 2 )
+expand = true
 
-[node name="MoneyLabel" type="Label" parent="Control"]
-margin_right = 91.0
-margin_bottom = 38.0
+[node name="Money" type="Control" parent="Control"]
+margin_left = 19.0
+margin_top = 14.0
+margin_right = 180.0
+margin_bottom = 77.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_right = 89.0
-margin_bottom = 89.0
+[node name="MoneyLabel" type="Label" parent="Control/Money"]
+margin_left = 68.0
+margin_top = 30.0
+margin_right = 242.0
+margin_bottom = 99.0
+rect_scale = Vector2( 0.534179, 0.534179 )
+custom_fonts/font = ExtResource( 6 )
+text = "100000"
+
+[node name="MoneyTexture" type="TextureRect" parent="Control/Money"]
+margin_right = 68.0
+margin_bottom = 68.0
 texture = ExtResource( 8 )
 expand = true
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
-margin_left = 106.959
-margin_top = 11.2246
-margin_right = 182.959
-margin_bottom = 87.2246
+[node name="Nufus" type="Control" parent="Control"]
+margin_left = 182.37
+margin_top = 27.6346
+margin_right = 329.37
+margin_bottom = 76.6346
+
+[node name="NufusLabel" type="Label" parent="Control/Nufus"]
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 193.0
+margin_bottom = 85.0
+rect_scale = Vector2( 0.534, 0.534 )
+custom_fonts/font = ExtResource( 6 )
+text = "100000"
+
+[node name="NufusTexture" type="TextureRect" parent="Control/Nufus"]
+margin_top = -9.53674e-07
+margin_right = 48.0
+margin_bottom = 48.0
 texture = ExtResource( 7 )
 expand = true
 
-[node name="TextureRect3" type="TextureRect" parent="Control"]
-margin_left = 201.347
-margin_top = 15.0001
-margin_right = 277.347
-margin_bottom = 91.0001
-texture = ExtResource( 9 )
+[node name="Elektirik" type="Control" parent="Control"]
+margin_left = 315.921
+margin_top = 29.0
+margin_right = 447.921
+margin_bottom = 78.0
+
+[node name="ElektirikLabel" type="Label" parent="Control/Elektirik"]
+margin_left = 39.0
+margin_top = 16.0
+margin_right = 213.0
+margin_bottom = 85.0
+rect_scale = Vector2( 0.534, 0.534 )
+custom_fonts/font = ExtResource( 6 )
+text = "100000"
+
+[node name="ElektirikTexture" type="TextureRect" parent="Control/Elektirik"]
+margin_top = -9.53674e-07
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
 expand = true
 
-[node name="TextureRect4" type="TextureRect" parent="Control"]
-margin_left = 300.125
-margin_top = 6.99108
-margin_right = 376.125
-margin_bottom = 82.9911
-texture = ExtResource( 10 )
+[node name="Yemek" type="Control" parent="Control"]
+margin_left = 448.0
+margin_top = 29.0
+margin_right = 580.0
+margin_bottom = 78.0
+
+[node name="YemekLabel" type="Label" parent="Control/Yemek"]
+margin_left = 39.0
+margin_top = 16.0
+margin_right = 213.0
+margin_bottom = 85.0
+rect_scale = Vector2( 0.534, 0.534 )
+custom_fonts/font = ExtResource( 6 )
+text = "100000"
+
+[node name="YemekTexture" type="TextureRect" parent="Control/Yemek"]
+margin_top = -9.53674e-07
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 13 )
 expand = true
 
-[node name="TextureRect5" type="TextureRect" parent="Control"]
-margin_left = 381.55
-margin_top = 10.9956
-margin_right = 457.55
-margin_bottom = 86.9956
-texture = ExtResource( 6 )
+[node name="Su" type="Control" parent="Control"]
+margin_left = 580.0
+margin_top = 29.0
+margin_right = 718.0
+margin_bottom = 78.0
+
+[node name="SuLabel" type="Label" parent="Control/Su"]
+margin_left = 44.8271
+margin_top = 16.0
+margin_right = 218.827
+margin_bottom = 85.0
+rect_scale = Vector2( 0.534, 0.534 )
+custom_fonts/font = ExtResource( 6 )
+text = "100000"
+
+[node name="SuTexture" type="TextureRect" parent="Control/Su"]
+margin_top = -9.53674e-07
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 14 )
 expand = true
 
-[connection signal="pressed" from="Control/Control/KucukEvBtn" to="Control" method="_on_KucukEvBtn_pressed"]
+[node name="Mutluluk" type="Control" parent="Control"]
+margin_left = 723.334
+margin_top = 29.0
+margin_right = 855.334
+margin_bottom = 78.0
+
+[node name="MutlulukLabel" type="Label" parent="Control/Mutluluk"]
+margin_left = 48.8271
+margin_top = 16.0
+margin_right = 222.827
+margin_bottom = 85.0
+rect_scale = Vector2( 0.534, 0.534 )
+custom_fonts/font = ExtResource( 6 )
+text = "100000"
+
+[node name="MutlulukTexture" type="TextureRect" parent="Control/Mutluluk"]
+margin_top = -9.53674e-07
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+expand = true
+
+[connection signal="pressed" from="Control/EvlerPanel/Panel/ScrollContainer/vbox/KucukEvBtn" to="Control" method="_on_KucukEvBtn_pressed"]
+[connection signal="pressed" from="Control/EvlerPanel/Panel/ScrollContainer/vbox/OrtaEvBtn" to="Control" method="_on_OrtaEvBtn_pressed"]
 [connection signal="pressed" from="Control/Control/EvMenuBtn" to="Control" method="_on_EvMenuBtn_pressed"]
 [connection signal="pressed" from="Control/Control/BuildBtn" to="Control" method="_on_BuildBtn_pressed"]

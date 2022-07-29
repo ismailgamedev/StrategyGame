@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/sprites/platform.png" type="Texture" id=1]
 [ext_resource path="res://objects/grid/Grid.gd" type="Script" id=2]
+[ext_resource path="res://UI/ui_sprites/building_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/font.tres" type="DynamicFont" id=5]
 
 [node name="Grid" type="Area2D"]
 script = ExtResource( 2 )
@@ -22,7 +24,29 @@ scale = Vector2( 0.0646328, 0.0646328 )
 
 [node name="binaTimer" type="Timer" parent="."]
 wait_time = 3.0
-autostart = true
+
+[node name="BuildingShits" type="Control" parent="."]
+visible = false
+margin_left = -9.81102
+margin_top = -14.9152
+margin_right = 13.189
+margin_bottom = -2.91521
+
+[node name="nowbuildingicon" type="TextureRect" parent="BuildingShits"]
+margin_left = -0.499039
+margin_top = 0.129688
+margin_right = 10.501
+margin_bottom = 11.1297
+texture = ExtResource( 4 )
+expand = true
+
+[node name="timer_label" type="Label" parent="BuildingShits"]
+margin_left = 13.0
+margin_right = 269.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.16773, 0.16773 )
+custom_fonts/font = ExtResource( 5 )
+text = "10"
 
 [connection signal="input_event" from="." to="." method="_on_Grid_input_event"]
 [connection signal="timeout" from="binaTimer" to="." method="_on_binaTimer_timeout"]
