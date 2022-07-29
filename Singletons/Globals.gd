@@ -36,3 +36,5 @@ var gelirListesi = {
 #var nufus : int = 50
 enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,fabrika,petrol_donusturucusu,biyo_yakit_donusturucusu, }
 var current_building = current_building_enum.bos
+
+
