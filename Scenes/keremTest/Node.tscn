@@ -11,7 +11,7 @@
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -99.8991, 5.6123 )
 
-[node name="Grid" parent="YSort" instance=ExtResource( 3 )]
+[node name="Grid" parent="YSort" groups=["map"] instance=ExtResource( 3 )]
 
 [node name="Grid2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 31.2128, 22.0532 )

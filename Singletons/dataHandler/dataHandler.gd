@@ -3,6 +3,10 @@ var fileName = "data.save"
 var fileName2 = "time.save"
 var filePath = "user://"
 
+
+
+var Mapfile1 =  "mapFile1.save"
+var Mapfile2 = "mapFile2.save"
 var password = "MID_Beetlejuicetr"
 func _save():
 	var file = File.new()
@@ -28,4 +32,52 @@ func _load_time():
 	var file = File.new()
 	file.open_encrypted_with_pass(filePath+fileName2,File.WRITE,password)
 	TimeHandler.recentTimeGlobal = file.get_var()
+	pass
+
+
+
+func _save_map(Data1: Array,Data2: Array):
+	var file = File.new()
+	file.open_encrypted_with_pass(filePath+Mapfile1,File.WRITE,password)
+	file.store_var(Data1)
+	file.close()
+	
+	file.open_encrypted_with_pass(filePath+Mapfile2,File.WRITE,password)
+	file.store_var(Data2)
+	file.close()
+	pass
+
+
+func _load_map(who):
+	
+	var geciciDegisken = []
+	var geciciDegisken2 = []
+	
+	var file = File.new()
+	if !file.file_exists(filePath+Mapfile1):
+		print("kayit Dosyasi ' ",filePath+Mapfile1," ' konumunda bulunamadi !")
+		pass
+	
+	else:
+		file.open_encrypted_with_pass(filePath+Mapfile1,File.READ,password)
+		geciciDegisken = file.get_var()
+		file.close()
+		
+		file.open_encrypted_with_pass(filePath+Mapfile2,File.READ,password)
+		geciciDegisken2 = file.get_var()
+		file.close()
+		
+		
+		for i in get_node(who).get_child_count():
+			# 4
+			print(get_node(who).get_child(i).name)
+			for i2 in get_node(who).get_child(i).get_child_count():
+				
+#				get_node(who).get_child(i).get_child(i2).current_building = geciciDegisken[i2]
+#				get_node(who).get_child(i).get_child(i2).is_building = geciciDegisken2[i2]
+				get_node(who).get_child(i).get_child(i2)._map_load(geciciDegisken[i2],geciciDegisken2[i2])
+				
+				pass
+			pass
+	
 	pass

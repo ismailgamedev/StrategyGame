@@ -35,14 +35,19 @@ animations = [ {
 "name": "bos",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "kucuk_ev",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "buyuk_ev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "orta_ev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "gunes_paneli",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -50,9 +55,9 @@ animations = [ {
 "name": "elektirik_santrali",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "orta_ev",
+"name": "kucuk_ev",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 3 ) ],
@@ -63,11 +68,6 @@ animations = [ {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "sudepo",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "gunes_paneli",
 "speed": 5.0
 } ]
 

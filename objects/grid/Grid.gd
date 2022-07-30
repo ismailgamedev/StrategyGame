@@ -11,21 +11,33 @@ enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali,ru
 export(current_building_enum) var current_building = current_building_enum.bos
 
 var is_building : bool
+var InsayaKalanSure = 0
+var enumToText = ["bos","kucuk_ev","orta_ev","buyuk_ev","elektirik_santrali","ruzgarturbini","gunes_paneli","sudepo"]
+
+func _map_load(currentBuild,isBuild):
+	
+	current_building = current_building_enum[enumToText[currentBuild]]
+	is_building = isBuild
+	animated_spirte.play(enumToText[currentBuild])
+	
+	pass
 
 func _process(delta):
 	if is_building == false:
 		nowbuildingicon.visible = false
 		animated_spirte.modulate = Color(1, 1, 1)
 	else:
+		
 		nowbuildingicon.visible = true
 		nowbuildingicon.get_node("timer_label").text = str(int(building_timer.time_left))
 		animated_spirte.modulate = Color(1, 1, 1, 0.3)
-	if Globals.current_building != Globals.current_building_enum.bos:
+	if Globals.current_building != Globals.current_building_enum.bos and current_building == current_building_enum.bos:
 		platform.modulate = Color(0.203922, 0.490196, 0.203922)
+		
 	else:
 		platform.modulate = Color(1, 1, 1)
-		
-
+	if Globals.current_building != Globals.current_building_enum.bos and current_building != current_building_enum.bos:
+		platform.modulate = Color(1, 0, 0)
 func _on_Grid_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed:

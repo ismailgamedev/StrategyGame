@@ -1,0 +1,148 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/grid/Grid.tscn" type="PackedScene" id=2]
+
+[node name="4x4" type="YSort"]
+
+[node name="Grid" parent="." instance=ExtResource( 2 )]
+
+[node name="Grid2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 31.2128, 22.0532 )
+
+[node name="Grid3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 35.3873, -25.0407 )
+
+[node name="Grid4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 66.6001, -2.98749 )
+
+[node name="Grid5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 70.7603, -50.0738 )
+
+[node name="Grid6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 101.973, -28.0206 )
+
+[node name="Grid7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 106.148, -75.1145 )
+
+[node name="Grid8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 137.36, -53.0613 )
+
+[node name="Grid9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 62.3713, 44.085 )
+
+[node name="Grid10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 93.5841, 66.1382 )
+
+[node name="Grid11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 97.7586, 19.0444 )
+
+[node name="Grid12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128.971, 41.0976 )
+
+[node name="Grid13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 133.132, -5.98879 )
+
+[node name="Grid14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 164.344, 16.0644 )
+
+[node name="Grid15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 168.519, -31.0295 )
+
+[node name="Grid16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 199.732, -8.97627 )
+
+[node name="Grid17" parent="." instance=ExtResource( 2 )]
+position = Vector2( -141.534, 100.179 )
+
+[node name="Grid18" parent="." instance=ExtResource( 2 )]
+position = Vector2( -110.322, 122.232 )
+
+[node name="Grid19" parent="." instance=ExtResource( 2 )]
+position = Vector2( -106.147, 75.138 )
+
+[node name="Grid20" parent="." instance=ExtResource( 2 )]
+position = Vector2( -74.9343, 97.1912 )
+
+[node name="Grid21" parent="." instance=ExtResource( 2 )]
+position = Vector2( -70.7741, 50.1049 )
+
+[node name="Grid22" parent="." instance=ExtResource( 2 )]
+position = Vector2( -39.5614, 72.1581 )
+
+[node name="Grid23" parent="." instance=ExtResource( 2 )]
+position = Vector2( -35.3864, 25.0642 )
+
+[node name="Grid24" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4.17439, 47.1174 )
+
+[node name="Grid25" parent="." instance=ExtResource( 2 )]
+position = Vector2( -79.1631, 144.264 )
+
+[node name="Grid26" parent="." instance=ExtResource( 2 )]
+position = Vector2( -47.9503, 166.317 )
+
+[node name="Grid27" parent="." instance=ExtResource( 2 )]
+position = Vector2( -43.7758, 119.223 )
+
+[node name="Grid28" parent="." instance=ExtResource( 2 )]
+position = Vector2( -12.5634, 141.276 )
+
+[node name="Grid29" parent="." instance=ExtResource( 2 )]
+position = Vector2( -8.40239, 94.1899 )
+
+[node name="Grid30" parent="." instance=ExtResource( 2 )]
+position = Vector2( 22.8096, 116.243 )
+
+[node name="Grid31" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.9846, 69.1492 )
+
+[node name="Grid32" parent="." instance=ExtResource( 2 )]
+position = Vector2( 58.1976, 91.2024 )
+
+[node name="Grid33" parent="." instance=ExtResource( 2 )]
+position = Vector2( -16.7333, 188.347 )
+
+[node name="Grid34" parent="." instance=ExtResource( 2 )]
+position = Vector2( 14.4795, 210.4 )
+
+[node name="Grid35" parent="." instance=ExtResource( 2 )]
+position = Vector2( 18.654, 163.306 )
+
+[node name="Grid36" parent="." instance=ExtResource( 2 )]
+position = Vector2( 49.8668, 185.359 )
+
+[node name="Grid37" parent="." instance=ExtResource( 2 )]
+position = Vector2( 54.027, 138.273 )
+
+[node name="Grid38" parent="." instance=ExtResource( 2 )]
+position = Vector2( 85.2397, 160.326 )
+
+[node name="Grid39" parent="." instance=ExtResource( 2 )]
+position = Vector2( 89.4147, 113.232 )
+
+[node name="Grid40" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120.627, 135.285 )
+
+[node name="Grid41" parent="." instance=ExtResource( 2 )]
+position = Vector2( 45.638, 232.432 )
+
+[node name="Grid42" parent="." instance=ExtResource( 2 )]
+position = Vector2( 76.8508, 254.485 )
+
+[node name="Grid43" parent="." instance=ExtResource( 2 )]
+position = Vector2( 81.0253, 207.391 )
+
+[node name="Grid44" parent="." instance=ExtResource( 2 )]
+position = Vector2( 112.238, 229.444 )
+
+[node name="Grid45" parent="." instance=ExtResource( 2 )]
+position = Vector2( 116.399, 182.358 )
+
+[node name="Grid46" parent="." instance=ExtResource( 2 )]
+position = Vector2( 147.611, 204.411 )
+
+[node name="Grid47" parent="." instance=ExtResource( 2 )]
+position = Vector2( 151.786, 157.317 )
+
+[node name="Grid48" parent="." instance=ExtResource( 2 )]
+position = Vector2( 182.999, 179.37 )
