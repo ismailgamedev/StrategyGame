@@ -25,9 +25,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -331.0
-margin_top = -447.0
+margin_top = -198.5
 margin_right = 331.0
-margin_bottom = 447.0
+margin_bottom = 198.5
 
 [node name="Button" type="Button" parent="Panel"]
 anchor_left = 0.5
@@ -75,10 +75,10 @@ custom_fonts/font = SubResource( 3 )
 text = "Dolar"
 
 [node name="yemekPanel" type="Panel" parent="Panel"]
-margin_left = 40.0
-margin_top = 247.0
-margin_right = 296.0
-margin_bottom = 325.0
+margin_left = 317.0
+margin_top = 149.5
+margin_right = 573.0
+margin_bottom = 227.5
 custom_styles/panel = SubResource( 2 )
 
 [node name="yemekBox" type="SpinBox" parent="Panel/yemekPanel"]
@@ -102,9 +102,9 @@ text = "Yemek"
 
 [node name="enerjiPanel" type="Panel" parent="Panel"]
 margin_left = 40.0
-margin_top = 343.0
+margin_top = 248.5
 margin_right = 296.0
-margin_bottom = 421.0
+margin_bottom = 326.5
 custom_styles/panel = SubResource( 2 )
 
 [node name="enerjiBox" type="SpinBox" parent="Panel/enerjiPanel"]
