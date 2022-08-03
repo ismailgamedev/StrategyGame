@@ -2,6 +2,7 @@ extends Node
 
 onready var httpRequest = $HTTPRequest
 func _ready():
+	
 	httpRequest.connect("request_completed", self, "_mevcut_tarih_saat")
 	httpRequest.request("http://worldtimeapi.org/api/timezone/Europe/Istanbul")
 	
@@ -19,11 +20,11 @@ var timeGlobal = {
 
 
 var recentTimeGlobal = {
-	"hour":15,
-	"minute":53,
-	"second":32,
-	"day":29,
-	"month":05,
+	"hour":0,
+	"minute":0,
+	"second":0,
+	"day":0,
+	"month":07,
 	"year":2022,
 }
 
@@ -40,7 +41,7 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		
 		recentTimeGlobal = timeGlobal
-		print(recentTimeGlobal)
+		#print(recentTimeGlobal)
 		DataHandler._save_time()
 		get_tree().quit()
 	pass
@@ -55,7 +56,7 @@ func _mevcut_tarih_saat(result, response_code, headers, body):
 	timeGlobal.day = int (json.result["datetime"].split("T")[0].split("-")[2])
 	timeGlobal.month = int(json.result["datetime"].split("T")[0].split("-")[1])
 	timeGlobal.year = int(json.result["datetime"].split("T")[0].split("-")[0])
-	
+	#DataHandler._load_time()
 	pass
 
 

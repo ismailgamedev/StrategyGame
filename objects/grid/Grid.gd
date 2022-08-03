@@ -9,7 +9,7 @@ onready var animated_spirte = get_node("AnimatedSprite")
 
 enum current_building_enum { bos,kucuk_ev,orta_ev,buyuk_ev,elektirik_santrali,ruzgarturbini,gunes_paneli,sudepo }
 export(current_building_enum) var current_building = current_building_enum.bos
-
+var mapYuklendi = false
 
 var is_building : bool
 var InsayaKalanSure = 0
@@ -21,23 +21,21 @@ func _map_load(currentBuild,isBuild,timeLeft):
 	is_building = isBuild
 	animated_spirte.play(enumToText[currentBuild])
 	InsayaKalanSure = timeLeft
+	if InsayaKalanSure > 0:
+		print(InsayaKalanSure,"*-*",timeLeft,"*//",building_timer.time_left)
+	mapYuklendi = true
 	pass
 
 func _physics_process(delta):
-	if is_building == false:
-		nowbuildingicon.visible = false
-		animated_spirte.modulate = Color(1, 1, 1)
-	else:
-		if InsayaKalanSure > 0 and int(building_timer.time_left)+1 != int(InsayaKalanSure):
-			print(InsayaKalanSure,"//",int(building_timer.time_left)+1)
-			if int(building_timer.time_left) == 0:
-				InsayaKalanSure = 0
-				building_timer.start(InsayaKalanSure)
-			
-			
-			
+	if mapYuklendi:
+		if is_building == false:
+			nowbuildingicon.visible = false
+			animated_spirte.modulate = Color(1, 1, 1)
 		else:
-		
+			if building_timer.is_stopped() and is_building == true:
+				building_timer.start(InsayaKalanSure)
+
+			
 			nowbuildingicon.visible = true
 			nowbuildingicon.get_node("timer_label").text = str(int(building_timer.time_left))
 			InsayaKalanSure = int(building_timer.time_left)
@@ -62,8 +60,8 @@ func create_building():
 		current_building = current_building_enum.kucuk_ev
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
-		building_timer.start(8)
-		InsayaKalanSure = 8
+		building_timer.start(12)
+		InsayaKalanSure = 12
 		Globals.data["dolar"] -= 20
 
 	if Globals.current_building == Globals.current_building_enum.orta_ev and Globals.data["dolar"] >= 40:
@@ -146,3 +144,12 @@ func _on_binaTimer_timeout():
 		is_building = false
 		building_timer.stop()
 
+
+
+func _ready():
+	#TimeHandler._gecen_zaman()
+	pass
+
+func _gecen_sure_hesaplamasi():
+	
+	pass

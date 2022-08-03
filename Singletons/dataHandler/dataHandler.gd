@@ -9,6 +9,7 @@ var Mapfile1 =  "mapFile1.save"
 var Mapfile2 = "mapFile2.save"
 var Mapfile3 = "mapFile3.save"
 var password = "MID_Beetlejuicetr"
+
 func _save():
 	var file = File.new()
 	file.open_encrypted_with_pass(filePath+fileName,File.WRITE,password)
@@ -24,6 +25,7 @@ func _load():
 
 func _save_time():
 	var file = File.new()
+	
 	TimeHandler.httpRequest.request("http://worldtimeapi.org/api/timezone/Europe/Istanbul")
 	file.open_encrypted_with_pass(filePath+fileName2,File.WRITE,password)
 	file.store_var(TimeHandler.recentTimeGlobal)
@@ -31,8 +33,10 @@ func _save_time():
 
 func _load_time():
 	var file = File.new()
-	file.open_encrypted_with_pass(filePath+fileName2,File.WRITE,password)
+	file.open_encrypted_with_pass(filePath+fileName2,File.READ,password)
+	print(file.get_var(),"AH")
 	TimeHandler.recentTimeGlobal = file.get_var()
+	
 	pass
 
 
