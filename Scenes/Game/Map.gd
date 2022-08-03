@@ -7,7 +7,7 @@ func _ready():
 
 var dataArray = []
 var dataArray2 = []
-
+var dataArray3 = []
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
@@ -21,10 +21,11 @@ func _save_map():
 		for i2 in get_child(i).get_child_count():
 			dataArray.append(get_child(i).get_child(i2).current_building)
 			dataArray2.append(get_child(i).get_child(i2).is_building)
+			dataArray3.append(get_child(i).get_child(i2).InsayaKalanSure)
 			pass
 		pass
-	print(dataArray,dataArray2)
-	DataHandler._save_map(dataArray,dataArray2)
+	print(dataArray,dataArray2,dataArray3)
+	DataHandler._save_map(dataArray,dataArray2,dataArray3)
 	pass
 
 func _load_map():

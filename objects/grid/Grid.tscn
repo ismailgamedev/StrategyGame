@@ -35,24 +35,14 @@ animations = [ {
 "name": "bos",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "buyuk_ev",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "orta_ev",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "gunes_paneli",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "elektirik_santrali",
+"name": "orta_ev",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ) ],
@@ -68,6 +58,16 @@ animations = [ {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "sudepo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "buyuk_ev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "elektirik_santrali",
 "speed": 5.0
 } ]
 
