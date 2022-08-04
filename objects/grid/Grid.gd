@@ -147,7 +147,7 @@ func _on_binaTimer_timeout():
 
 
 func _ready():
-	#TimeHandler._gecen_zaman()
+	TimeHandler._gecen_zaman()
 	pass
 
 func _gecen_sure_hesaplamasi():

@@ -34,7 +34,6 @@ func _save_time():
 func _load_time():
 	var file = File.new()
 	file.open_encrypted_with_pass(filePath+fileName2,File.READ,password)
-	print(file.get_var(),"AH")
 	TimeHandler.recentTimeGlobal = file.get_var()
 	
 	pass
