@@ -37,14 +37,7 @@ var timeFinaly = {
 	"year":2022,
 }
 
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		
-		recentTimeGlobal = timeGlobal
-		#print(recentTimeGlobal)
-		DataHandler._save_time()
-		get_tree().quit()
-	pass
+
 
 
 func _mevcut_tarih_saat(result, response_code, headers, body):
@@ -56,37 +49,43 @@ func _mevcut_tarih_saat(result, response_code, headers, body):
 	timeGlobal.day = int (json.result["datetime"].split("T")[0].split("-")[2])
 	timeGlobal.month = int(json.result["datetime"].split("T")[0].split("-")[1])
 	timeGlobal.year = int(json.result["datetime"].split("T")[0].split("-")[0])
-	#DataHandler._load_time()
+	
+	
+	
+	_gecen_zaman()
+	TimeHandler.recentTimeGlobal = TimeHandler.timeGlobal
 	pass
 
 
 
 func _gecen_zaman():
-
-		timeFinaly.month = timeGlobal.month - recentTimeGlobal.month
-		timeFinaly.day = timeGlobal.day - recentTimeGlobal.day
-		timeFinaly.hour = timeGlobal.hour - recentTimeGlobal.hour
-		timeFinaly.minute = timeGlobal.minute - recentTimeGlobal.minute
-		timeFinaly.second = timeGlobal.second - recentTimeGlobal.second
-		timeFinaly.year = timeGlobal.year - recentTimeGlobal.year
-		
-		for i in timeFinaly:
-			if timeFinaly[i] < 0:
-				if i == "hour":
-					var x = -timeFinaly[i]
-					timeFinaly[i] = 24 - x
-				if i == "minute":
-					var x = -timeFinaly[i]
-					timeFinaly[i] = 60 - x
-				if i == "second":
-					var x = -timeFinaly[i]
-					timeFinaly[i] = 60 - x
-				if i == "month":
-					var x = -timeFinaly[i]
-					timeFinaly[i] = 12 - x
-				if i == "day":
-					var x = -timeFinaly[i]
-					timeFinaly[i] = 30 - x
-		
-		print("gecen zaman",timeFinaly)
+	
+	timeFinaly.month = timeGlobal.month - recentTimeGlobal.month
+	timeFinaly.day = timeGlobal.day - recentTimeGlobal.day
+	timeFinaly.hour = timeGlobal.hour - recentTimeGlobal.hour
+	timeFinaly.minute = timeGlobal.minute - recentTimeGlobal.minute
+	timeFinaly.second = timeGlobal.second - recentTimeGlobal.second
+	timeFinaly.year = timeGlobal.year - recentTimeGlobal.year
+	
+	for i in timeFinaly:
+		if timeFinaly[i] < 0:
+			if i == "hour":
+				var x = -timeFinaly[i]
+				timeFinaly[i] = 24 - x
+			if i == "minute":
+				var x = -timeFinaly[i]
+				timeFinaly[i] = 60 - x
+			if i == "second":
+				var x = -timeFinaly[i]
+				timeFinaly[i] = 60 - x
+			if i == "month":
+				var x = -timeFinaly[i]
+				timeFinaly[i] = 12 - x
+			if i == "day":
+				var x = -timeFinaly[i]
+				timeFinaly[i] = 30 - x
+	
+	print("gecen zaman",timeFinaly)
+	print("onceki giris",recentTimeGlobal)
+	print("simdi ki saat",timeGlobal)
 

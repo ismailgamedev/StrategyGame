@@ -9,6 +9,9 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DataHandler._load_time()
+	DataHandler._load()
+	TimeHandler.httpRequest.request("http://worldtimeapi.org/api/timezone/Europe/Istanbul")
+	print(TimeHandler.timeFinaly)
 	pass # Replace with function body.
 
 

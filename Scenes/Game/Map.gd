@@ -13,7 +13,6 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		
 		_save_map()
-		get_tree().quit()
 	pass
 
 func _save_map():
