@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://trans/ceviriler.en.translation", "res://trans/ceviriler.tr.translation", "res://trans/ceviriler.da.translation", "res://trans/ceviriler.de.translation" ]
+
+source_file="res://trans/ceviriler.csv"
+dest_files=[ "res://trans/ceviriler.en.translation", "res://trans/ceviriler.tr.translation", "res://trans/ceviriler.da.translation", "res://trans/ceviriler.de.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

@@ -166,6 +166,7 @@ _global_script_class_icons={
 
 config/name="Strategy Game"
 run/main_scene="res://UI/MainMenu.tscn"
+boot_splash/image="res://assets/sprites/splashscreen.png"
 config/icon="res://icon.png"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
@@ -175,7 +176,6 @@ config/quit_on_go_back=false
 Globals="*res://Singletons/Globals.gd"
 DataHandler="*res://Singletons/dataHandler/dataHandler.gd"
 TimeHandler="*res://Singletons/timeHandler/timeHandler.tscn"
-Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 [display]
 
@@ -184,7 +184,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/silicon.util.custom_docs/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/SliderLabel/plugin.cfg" )
 
 [importer_defaults]
 
@@ -226,6 +226,13 @@ scroll_down={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[locale]
+
+locale_filter=[ 1, [ "da", "de", "en", "tr" ] ]
+translations=PoolStringArray( "res://trans/ceviriler.csv", "res://trans/ceviriler.da.translation", "res://trans/ceviriler.de.translation", "res://trans/ceviriler.en.translation", "res://trans/ceviriler.tr.translation" )
+translation_remaps={
+}
 
 [physics]
 
