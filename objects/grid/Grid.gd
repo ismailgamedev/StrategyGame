@@ -56,6 +56,7 @@ func _on_Grid_input_event(_viewport, event, _shape_idx):
 			# Eger insaa ettigimiz bina yoksa girmiyoruz
 			if Globals.current_building != Globals.current_building_enum.bos and current_building == current_building_enum.bos:
 				create_building()
+				print("CALİSMASI LAZIM")
 
 func create_building():
 	if Globals.current_building == Globals.current_building_enum.kucuk_ev and Globals.data["dolar"] >= 20:
@@ -64,6 +65,8 @@ func create_building():
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
 		building_timer.start(120)
+		mapYuklendi = true
+		print(building_timer.time_left)
 		InsayaKalanSure = 120
 		Globals.data["dolar"] -= 20
 
@@ -72,6 +75,7 @@ func create_building():
 		current_building = current_building_enum.orta_ev
 		Globals.current_building = Globals.current_building_enum.bos
 		building_timer.start(8)
+		mapYuklendi = true
 		InsayaKalanSure = 8
 		is_building = true
 		Globals.data["dolar"] -= 40
@@ -81,6 +85,7 @@ func create_building():
 		current_building = current_building_enum.buyuk_ev
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
+		mapYuklendi = true
 		building_timer.start(8)
 		InsayaKalanSure = 8
 		Globals.data["dolar"] -= 100
@@ -90,6 +95,7 @@ func create_building():
 		current_building = current_building_enum.elektirik_santrali
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
+		mapYuklendi = true
 		building_timer.start(8)
 		InsayaKalanSure = 8
 		Globals.data["dolar"] -= 200
@@ -99,6 +105,7 @@ func create_building():
 		current_building = current_building_enum.ruzgarturbini
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
+		mapYuklendi = true
 		building_timer.start(8)
 		InsayaKalanSure = 8
 		Globals.data["dolar"] -= 150
@@ -108,6 +115,7 @@ func create_building():
 		current_building = current_building_enum.ruzgarturbini
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
+		mapYuklendi = true
 		building_timer.start(8)
 		InsayaKalanSure = 8
 		Globals.data["dolar"] -= 100
@@ -117,6 +125,7 @@ func create_building():
 		current_building = current_building_enum.sudepo
 		Globals.current_building = Globals.current_building_enum.bos
 		is_building = true
+		mapYuklendi = true
 		building_timer.start(8)
 		InsayaKalanSure = 8
 		Globals.data["dolar"] -= 100
@@ -153,6 +162,7 @@ func _ready():
 	pass
 
 func _gecen_sure_hesaplamasi():
+	
 	if TimeHandler.timeFinaly["year"] >= 0:
 		TimeHandler.timeFinaly["month"] += TimeHandler.timeFinaly["year"] * 12
 	if TimeHandler.timeFinaly["month"] >=0:
