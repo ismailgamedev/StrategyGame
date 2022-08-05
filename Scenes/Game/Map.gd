@@ -13,6 +13,8 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		
 		_save_map()
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_save_map()
 	pass
 
 func _save_map():

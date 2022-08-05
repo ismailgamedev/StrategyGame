@@ -19,6 +19,12 @@ func _notification(what):
 		DataHandler._save()
 		
 		get_tree().quit()
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		DataHandler._save_time()
+		DataHandler._save()
+		
+		get_tree().quit()
+		pass
 	pass
 
 
