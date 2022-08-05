@@ -8,15 +8,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	DataHandler._load_time()
 	DataHandler._load()
 	TimeHandler.httpRequest.request("http://worldtimeapi.org/api/timezone/Europe/Istanbul")
 	print(TimeHandler.timeFinaly)
-	$PlayBtn.text = tr("playbtn")
-	$AboutMenuBtn.text = tr("aboutbtn")
-	$SettingsBtn.text = tr("settingsbtn")
-	
 	pass # Replace with function body.
 
 
@@ -27,12 +22,4 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Scenes/Game/World.tscn")
-	pass # Replace with function body.
-
-
-func _on_AboutMenuBtn_pressed():
-	pass # Replace with function body.
-
-
-func _on_Settings_pressed():
 	pass # Replace with function body.
