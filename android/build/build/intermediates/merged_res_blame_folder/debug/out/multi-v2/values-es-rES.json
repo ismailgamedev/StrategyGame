@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/kerem2/Belgeler/GitHub/Radome Games/beetlejuicetr/Radome-Studio/Radome-Studio/Radome-Studio/gh repo clone Radome-Studio/Radome-Studio/StrategyGame/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rES/values-es-rES.xml",
+            "map": [
+                {
+                    "source": "/home/kerem2/Belgeler/GitHub/Radome Games/beetlejuicetr/Radome-Studio/Radome-Studio/Radome-Studio/gh repo clone Radome-Studio/Radome-Studio/StrategyGame/android/build/res/values-es-rES/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "61",
+                        "endOffsets": "172"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "64",
+                        "endOffsets": "115"
+                    }
+                }
+            ]
+        }
+    ]
+}

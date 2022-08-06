@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/camera/Kamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/grid/Grid.tscn" type="PackedScene" id=3]
+
+[node name="Node" type="Node"]
+
+[node name="Kamera" parent="." instance=ExtResource( 2 )]
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -99.8991, 5.6123 )
+
+[node name="Grid" parent="YSort" groups=["map"] instance=ExtResource( 3 )]
+
+[node name="Grid2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 31.2128, 22.0532 )
+
+[node name="Grid3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 35.3873, -25.0407 )
+
+[node name="Grid4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 66.6001, -2.98749 )
+
+[node name="Grid5" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 70.7603, -50.0738 )
+
+[node name="Grid6" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 101.973, -28.0206 )
+
+[node name="Grid7" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 106.148, -75.1145 )
+
+[node name="Grid8" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 137.36, -53.0613 )
+
+[node name="Grid9" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 62.3713, 44.085 )
+
+[node name="Grid10" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 93.5841, 66.1382 )
+
+[node name="Grid11" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 97.7586, 19.0444 )
+
+[node name="Grid12" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 128.971, 41.0976 )
+
+[node name="Grid13" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 133.132, -5.98879 )
+
+[node name="Grid14" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 164.344, 16.0644 )
+
+[node name="Grid15" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 168.519, -31.0295 )
+
+[node name="Grid16" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 199.732, -8.97627 )
+
+[node name="Grid17" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 231.04, 13.093 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 1 )]

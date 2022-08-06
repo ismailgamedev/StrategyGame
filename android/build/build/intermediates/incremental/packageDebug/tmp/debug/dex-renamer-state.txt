@@ -1,0 +1,13 @@
+#Sat Aug 06 20:05:20 TRT 2022
+path.3=classes2.dex
+path.2=6/classes.dex
+path.1=0/classes.dex
+path.0=classes.dex
+base.3=/home/kerem2/Belgeler/GitHub/Radome Games/beetlejuicetr/Radome-Studio/Radome-Studio/Radome-Studio/gh repo clone Radome-Studio/Radome-Studio/StrategyGame/android/build/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.2=/home/kerem2/Belgeler/GitHub/Radome Games/beetlejuicetr/Radome-Studio/Radome-Studio/Radome-Studio/gh repo clone Radome-Studio/Radome-Studio/StrategyGame/android/build/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+base.1=/home/kerem2/Belgeler/GitHub/Radome Games/beetlejuicetr/Radome-Studio/Radome-Studio/Radome-Studio/gh repo clone Radome-Studio/Radome-Studio/StrategyGame/android/build/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.0=/home/kerem2/Belgeler/GitHub/Radome Games/beetlejuicetr/Radome-Studio/Radome-Studio/Radome-Studio/gh repo clone Radome-Studio/Radome-Studio/StrategyGame/android/build/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex

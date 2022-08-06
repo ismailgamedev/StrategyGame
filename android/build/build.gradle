@@ -16,6 +16,7 @@ buildscript {
     dependencies {
         classpath libraries.androidGradlePlugin
         classpath libraries.kotlinGradlePlugin
+        classpath 'com.google.gms:google-services:4.3.3'
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_BEGIN
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_END
     }
@@ -52,7 +53,7 @@ dependencies {
         implementation project(":godot:lib")
     } else {
         // Custom build mode. In this scenario this project is the only one around and the Godot
-        // library is available through the pre-generated godot-lib.*.aar android archive files.
+        // library is available through the pre-ge.nerated godot-lib.*.aar android archive files.
         debugImplementation fileTree(dir: 'libs/debug', include: ['*.jar', '*.aar'])
         releaseImplementation fileTree(dir: 'libs/release', include: ['*.jar', '*.aar'])
     }
@@ -238,6 +239,6 @@ task copyAndRenameReleaseAab(type: Copy) {
     into getExportPath()
     rename "build-release.aab", getExportFilename()
 }
-
+apply plugin: 'com.google.gms.google-services'
 //CHUNK_GLOBAL_BEGIN
 //CHUNK_GLOBAL_END

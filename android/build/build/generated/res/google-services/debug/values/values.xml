@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1037862977737-3rinomo53qor6j5l8f305rqfnuk15t4g.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1037862977737</string>
+    <string name="google_api_key" translatable="false">AIzaSyCpK1efNo1bP082JGvZ6mNIMkCOnNRtVeY</string>
+    <string name="google_app_id" translatable="false">1:1037862977737:android:00f7fe4870725d34654d18</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCpK1efNo1bP082JGvZ6mNIMkCOnNRtVeY</string>
+    <string name="google_storage_bucket" translatable="false">ocean-city-4c594.appspot.com</string>
+    <string name="project_id" translatable="false">ocean-city-4c594</string>
+</resources>
