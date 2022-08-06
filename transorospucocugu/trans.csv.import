@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://transorospucocugu/trans.en.translation", "res://transorospucocugu/trans.tr.translation", "res://transorospucocugu/trans.da.translation", "res://transorospucocugu/trans.de.translation" ]
+
+source_file="res://transorospucocugu/trans.csv"
+dest_files=[ "res://transorospucocugu/trans.en.translation", "res://transorospucocugu/trans.tr.translation", "res://transorospucocugu/trans.da.translation", "res://transorospucocugu/trans.de.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

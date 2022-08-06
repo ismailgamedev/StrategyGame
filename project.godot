@@ -12,8 +12,12 @@ config_version=4
 
 config/name="Strategy Game"
 run/main_scene="res://UI/MainMenu.tscn"
+<<<<<<< Updated upstream
 boot_splash/image="res://UI/splashScreen/splashscreen.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
+=======
+boot_splash/image="res://assets/sprites/splashscreen.png"
+>>>>>>> Stashed changes
 config/icon="res://icon.png"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
@@ -80,6 +84,13 @@ stats={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[locale]
+
+locale_filter=[ 1, [ "da", "de", "en", "tr" ] ]
+translations=PoolStringArray( "res://transorospucocugu/trans.csv", "res://transorospucocugu/trans.da.translation", "res://transorospucocugu/trans.de.translation", "res://transorospucocugu/trans.en.translation", "res://transorospucocugu/trans.tr.translation" )
+translation_remaps={
+}
 
 [physics]
 
