@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Strategy Game"
-run/main_scene="res://UI/MainMenu.tscn"
+run/main_scene="res://UI/splashScreen/splashScreen.tscn"
 boot_splash/image="res://UI/splashScreen/splashscreen.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"

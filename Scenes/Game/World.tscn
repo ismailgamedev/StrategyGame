@@ -17,6 +17,30 @@ script = ExtResource( 2 )
 
 [node name="4x4" parent="Level/Map" instance=ExtResource( 1 )]
 
+[node name="4x5" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( 249.543, 176.387 )
+
+[node name="4x6" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( -282.994, 200.251 )
+
+[node name="4x7" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( -33.5636, 376.663 )
+
+[node name="4x8" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( -249.44, -176.391 )
+
+[node name="4x9" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( 532.463, -23.781 )
+
+[node name="4x10" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( 283.029, -200.206 )
+
+[node name="4x11" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( 33.5389, -376.629 )
+
+[node name="4x12" parent="Level/Map" instance=ExtResource( 1 )]
+position = Vector2( -532.417, 23.841 )
+
 [node name="CanvasLayer" parent="Level" instance=ExtResource( 3 )]
 
 [node name="Kamera" parent="Level" instance=ExtResource( 4 )]

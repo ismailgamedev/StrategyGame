@@ -87,10 +87,12 @@ func _save_map(Data1: Array,Data2: Array,Data3: Array):
 
 
 func _load_map(who):
-	
+	var priv = 0
+	var oldPriv =0
 	var geciciDegisken = []
 	var geciciDegisken2 = []
 	var geciciDegisken3 = []
+	
 	var file = File.new()
 	if !file.file_exists(filePath+Mapfile1):
 		print("kayit Dosyasi ' ",filePath+Mapfile1," ' konumunda bulunamadi !")
@@ -110,15 +112,20 @@ func _load_map(who):
 		file.close()
 		
 		for i in get_node(who).get_child_count():
-			# 4
+			
+			
 			print(get_node(who).get_child(i).name)
 			for i2 in get_node(who).get_child(i).get_child_count():
-				
+				if priv >= 1:
 #				get_node(who).get_child(i).get_child(i2).current_building = geciciDegisken[i2]
 #				get_node(who).get_child(i).get_child(i2).is_building = geciciDegisken2[i2]
-				get_node(who).get_child(i).get_child(i2)._map_load(geciciDegisken[i2],geciciDegisken2[i2],geciciDegisken3[i2])
+					get_node(who).get_child(i).get_child(i2)._map_load(geciciDegisken[i2+oldPriv],geciciDegisken2[i2+oldPriv],geciciDegisken3[i2+oldPriv])
 				
+					oldPriv += 1
+				else:
+					get_node(who).get_child(i).get_child(i2)._map_load(geciciDegisken[i2],geciciDegisken2[i2],geciciDegisken3[i2])
 				pass
+			priv += 1
 			pass
 	
 	pass
