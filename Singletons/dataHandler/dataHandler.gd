@@ -111,21 +111,6 @@ func _load_map(who):
 		geciciDegisken3 = file.get_var()
 		file.close()
 		
-		for i in get_node(who).get_child_count():
-			
-			
-			print(get_node(who).get_child(i).name)
-			for i2 in get_node(who).get_child(i).get_child_count():
-				if priv >= 1:
-#				get_node(who).get_child(i).get_child(i2).current_building = geciciDegisken[i2]
-#				get_node(who).get_child(i).get_child(i2).is_building = geciciDegisken2[i2]
-					get_node(who).get_child(i).get_child(i2)._map_load(geciciDegisken[i2+oldPriv],geciciDegisken2[i2+oldPriv],geciciDegisken3[i2+oldPriv])
-				
-					oldPriv += 1
-				else:
-					get_node(who).get_child(i).get_child(i2)._map_load(geciciDegisken[i2],geciciDegisken2[i2],geciciDegisken3[i2])
-				pass
-			priv += 1
-			pass
+		
 	
 	pass
